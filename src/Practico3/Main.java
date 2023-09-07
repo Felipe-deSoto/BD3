@@ -36,17 +36,13 @@ public class Main {
 					+ "materia VARCHAR(45),"
 					+ "periodo VARCHAR(45)"
 					+ ");");
+			
 			con.createStatement().executeQuery("CREATE TABLE Resultados("
 					+ "codigo INT,"
 					+ "codigo VARCHAR(45),"
-					+ "materia VARCHAR(45),"
-					+ "periodo VARCHAR(45)"
+					+ "calificacion INT,"
 					+ ");");
-			BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-			String userQuery = br.readLine();
-			Statement stmt = con.createStatement();
-			int r = stmt.executeUpdate(userQuery);
-			System.out.println(r);
+			
 		} catch (Exception e) {
 			System.out.println(e);
 		} finally {
