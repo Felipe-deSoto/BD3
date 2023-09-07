@@ -26,6 +26,7 @@ public class Main {
 	}
 	
 	public static void main(String[] args) throws SQLException, ClassNotFoundException {
+		//Prueba
 		Connection con = CrearConexion();
 		try {
 			con.createStatement().executeQuery("CREATE DATABASE Bedelia;"
