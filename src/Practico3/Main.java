@@ -29,19 +29,19 @@ public class Main {
 		//Prueba
 		Connection con = CrearConexion();
 		try {
-			con.createStatement().executeQuery("CREATE DATABASE Bedelia;"
-					+ "USE Bedelia;");
+			con.createStatement().executeUpdate("CREATE DATABASE Bedelia;");
+			con.createStatement().executeUpdate("USE Bedelia;");
 			
-			con.createStatement().executeQuery("CREATE TABLE Examenes("
+			con.createStatement().executeUpdate("CREATE TABLE Examenes("
 					+ "codigo VARCHAR(45),"
 					+ "materia VARCHAR(45),"
 					+ "periodo VARCHAR(45)"
 					+ ");");
 			
-			con.createStatement().executeQuery("CREATE TABLE Resultados("
-					+ "codigo INT,"
+			con.createStatement().executeUpdate("CREATE TABLE Resultados("
+					+ "cedula INT,"
 					+ "codigo VARCHAR(45),"
-					+ "calificacion INT,"
+					+ "calificacion INT"
 					+ ");");
 			
 		} catch (Exception e) {
