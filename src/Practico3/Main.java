@@ -32,16 +32,58 @@ public class Main {
 			con.createStatement().executeUpdate("CREATE DATABASE Bedelia;");
 			con.createStatement().executeUpdate("USE Bedelia;");
 			
-			con.createStatement().executeUpdate("CREATE TABLE Examenes("
-					+ "codigo VARCHAR(45),"
-					+ "materia VARCHAR(45),"
-					+ "periodo VARCHAR(45)"
-					+ ");");
+				con.createStatement().executeUpdate("CREATE TABLE Examenes("
+						+ "codigo VARCHAR(45),"
+						+ "materia VARCHAR(45),"
+						+ "periodo VARCHAR(45)"
+						+ ");");
 			
 			con.createStatement().executeUpdate("CREATE TABLE Resultados("
 					+ "cedula INT,"
 					+ "codigo VARCHAR(45),"
 					+ "calificacion INT"
+					+ ");");
+		
+			
+			// MAR DIS 1
+			con.createStatement().executeUpdate("INSERT INTO Examenes "
+					+ "VALUES ('MD2020Dic', "
+					+ "'Matemática discreta', '"
+					+ "Diciembre 2020'"
+					+ ");");
+
+
+			// PROG 1
+			con.createStatement().executeUpdate("INSERT INTO Examenes "
+					+ "VALUES ("
+					+ "'P12020Dic',"
+					+ "'Programación 1',"
+					+ "'Diciembre 2020'"
+					+ ");");
+
+			// BD 1
+			con.createStatement().executeUpdate("INSERT INTO Examenes "
+					+ "VALUES ("
+					+ "'BD2020Dic',"
+					+ "'Bases de datos',"
+					+ "'Diciembre 2020'"
+					+ ");");
+
+			// MAT DIS 2
+			con.createStatement().executeUpdate("INSERT INTO Examenes "
+					+ "VALUES ("
+					+ "'MD2021Feb',"
+					+ "'Matemática discreta II',"
+					+ "'Febrero 2021'"
+					+ ");");
+
+			
+			// SISO 
+			con.createStatement().executeUpdate("INSERT INTO Examenes "
+					+ "VALUES ("
+					+ "'SO2021Feb',"
+					+ "'Sistemas Operativos',"
+					+ "'Febrero 2021'"
 					+ ");");
 			
 		} catch (Exception e) {
