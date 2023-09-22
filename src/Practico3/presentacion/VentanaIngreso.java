@@ -49,7 +49,6 @@ public class VentanaIngreso {
 		for(Examen examen : examenes) {
 			examenesDLM.addElement(String.format("%s - %s - %s", examen.codigo, examen.materia, examen.periodo));
 		}
-		
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -67,7 +66,6 @@ public class VentanaIngreso {
 	 */
 	public VentanaIngreso() {
 		initialize();
-
 		list.addMouseListener(new MouseAdapter() {
 		   public void mouseClicked(MouseEvent me) {
 		      if (me.getClickCount() == 1) {
@@ -86,16 +84,16 @@ public class VentanaIngreso {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 300);
+		frame.setBounds(100, 100, 577, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("New label");
+		JLabel lblNewLabel = new JLabel("Examenes");
 		lblNewLabel.setBounds(10, 11, 221, 14);
 		frame.getContentPane().add(lblNewLabel);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(10, 36, 221, 214);
+		scrollPane.setBounds(10, 36, 348, 214);
 		frame.getContentPane().add(scrollPane);
 		
 		list = new JList<String>();
@@ -103,24 +101,24 @@ public class VentanaIngreso {
 		scrollPane.setViewportView(list);
 		
 		textField = new JTextField();
-		textField.setBounds(338, 8, 86, 20);
+		textField.setBounds(465, 8, 86, 20);
 		frame.getContentPane().add(textField);
 		textField.setColumns(10);
 		
 		textField_1 = new JTextField();
-		textField_1.setBounds(338, 47, 86, 20);
+		textField_1.setBounds(465, 47, 86, 20);
 		frame.getContentPane().add(textField_1);
 		textField_1.setColumns(10);
 		
-		JLabel lblNewLabel_1 = new JLabel("New label");
-		lblNewLabel_1.setBounds(241, 11, 87, 14);
+		JLabel lblNewLabel_1 = new JLabel("Cedula");
+		lblNewLabel_1.setBounds(368, 11, 87, 14);
 		frame.getContentPane().add(lblNewLabel_1);
 		
-		JLabel lblNewLabel_2 = new JLabel("New label");
-		lblNewLabel_2.setBounds(241, 50, 87, 14);
+		JLabel lblNewLabel_2 = new JLabel("Calificacion");
+		lblNewLabel_2.setBounds(368, 50, 87, 14);
 		frame.getContentPane().add(lblNewLabel_2);
 		
-		JButton btnNewButton = new JButton("New button");
+		JButton btnNewButton = new JButton("Agregar");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
@@ -130,7 +128,7 @@ public class VentanaIngreso {
 				}
 			}
 		});
-		btnNewButton.setBounds(241, 78, 183, 23);
+		btnNewButton.setBounds(368, 78, 183, 23);
 		frame.getContentPane().add(btnNewButton);
 	}
 	
@@ -138,10 +136,8 @@ public class VentanaIngreso {
 		try {
 			String driver = "com.mysql.jdbc.Driver";
 			Class.forName(driver);
-			
 			String url = "jdbc:mysql://localhost:3306/Bedelia";
 			return DriverManager.getConnection(url, "root", "root");
-			
 		} catch (Exception e) {
 			throw e;
 		}
